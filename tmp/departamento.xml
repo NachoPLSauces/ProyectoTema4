@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TablaDepartamentos>
+  <Departamento>
+    <CodDepartamento>CUA</CodDepartamento>
+    <DescDepartamento>Cuarto departamento</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DAW</CodDepartamento>
+    <DescDepartamento>Prueba departamento</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DIE</CodDepartamento>
+    <DescDepartamento>Décimo departamento</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DP0</CodDepartamento>
+    <DescDepartamento>Resgistro departamento</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DP1</CodDepartamento>
+    <DescDepartamento>Resgistro departamento</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DP2</CodDepartamento>
+    <DescDepartamento>Resgistro departamento</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>RG1</CodDepartamento>
+    <DescDepartamento>Primer registro</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>RG2</CodDepartamento>
+    <DescDepartamento>Segundo registro</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>RG3</CodDepartamento>
+    <DescDepartamento>Tercer registro</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>TAB</CodDepartamento>
+    <DescDepartamento>Departamento tablas de departamentos</DescDepartamento>
+  </Departamento>
+</TablaDepartamentos>
