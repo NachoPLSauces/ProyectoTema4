@@ -36,7 +36,7 @@ if (isset($_REQUEST['exportar'])) {
             $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             //Creo una variable que almacena una consulta sql
-            $sql = "SELECT CodDepartamento, DescDepartamento from Departamento";
+            $sql = "SELECT CodDepartamento, DescDepartamento, VolumenNegocio from Departamento";
 
             //Preparar la consulta
             $consulta = $miDB->prepare($sql);
@@ -56,6 +56,7 @@ if (isset($_REQUEST['exportar'])) {
                 //Creo los hijos de Departamento, que serán CodDepartamento y DescDepartamento
                 $xmlDepartamento->appendChild($dom->createElement("CodDepartamento", $registro->CodDepartamento));
                 $xmlDepartamento->appendChild($dom->createElement("DescDepartamento", $registro->DescDepartamento));
+                $xmlDepartamento->appendChild($dom->createElement("VolumenNegocio", $registro->VolumenNegocio));
 
                 $registro = $consulta->fetchObject();
             }
