@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Departamento (
     CodDepartamento CHAR(3) PRIMARY KEY,
     DescDepartamento VARCHAR(255) NOT NULL,
     FechaBaja DATE NULL,
-    Volumennegocio FLOAT NULL
+    VolumenNegocio FLOAT NULL
 
 ) ENGINE=INNODB;
 

@@ -81,11 +81,11 @@ if (isset($_REQUEST['exportar'])) {
                 </fieldset>
             </form>
         
-        <?php
-        }
-        ?>
+        
     </body>
 </html>
-
+<?php
+}
+?>
 
 

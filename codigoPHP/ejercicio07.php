@@ -66,13 +66,13 @@
         }
         else{
         ?>
-            <form>
-                <fieldset>
-                    <legend>Importar archivos</legend>
-                    <label>Pulsa para importar el archivo .xml</label><br>
-                    <input type="submit" name="importar" value="Importar">
-                </fieldset>
-            </form>
+        <form name="input" method="post">
+            <fieldset>
+                <legend>Importar archivos</legend>
+                <label>Pulsa para importar el archivo .xml</label><br>
+                <input type="submit" name="importar" value="Importar">
+            </fieldset>
+        </form>
         
         <?php
         }

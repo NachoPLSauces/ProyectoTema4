@@ -11,10 +11,10 @@
      * $miDB = new mysqli(HOST, USER, PASSWORD, DB);
     */
     //Conexión clase
-    define('HOST', '192.168.20.19');
+    /*define('HOST', '192.168.20.19');
     define('USER', 'usuarioDAW202DBDepartamentos');
     define('PASSWORD', 'paso');
-    define('DB', 'DAW202DBDepartamentos');
+    define('DB', 'DAW202DBDepartamentos');*/
        
     //Conexión casa
     /*define('HOST', '192.168.1.155');
@@ -23,8 +23,8 @@
     define('DB', 'DAW202DBDepartamentos');*/
             
     //Conexión 1n1
-    /*define('HOST', 'db5000278672.hosting-data.io');
+    define('HOST', 'db5000278672.hosting-data.io');
     define('USER', 'dbu62667');
     define('PASSWORD', 'Covid1234$');
-    define('DB', 'dbs272016');*/
+    define('DB', 'dbs272016');
 ?>
