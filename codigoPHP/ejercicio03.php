@@ -54,51 +54,28 @@
             //Comprobar que el campo volumenNegocio se ha rellenado con float
             $aErrores["volumenNegocio"] = validacionFormularios::comprobarFloat($_REQUEST['volumenNegocio'], MAX_FLOAT, MIN_FLOAT, OBLIGATORIO);
 
-            try {
-                //Instanciar un objeto PDO y establecer la conexión con la base de datos
-                $miDB = new PDO(DSN, USER, PASSWORD);
+            //Instanciar un objeto PDO y establecer la conexión con la base de datos
+            $miDB = new PDO(DSN, USER, PASSWORD);
 
-                //Establecer PDO::ERRMODE_EXCEPTION como valor del atributo PDO::ATTR_ERRMODE
-                $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //Establecer PDO::ERRMODE_EXCEPTION como valor del atributo PDO::ATTR_ERRMODE
+            $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                /*//Creo una variable que almacena una consulta sql para ver si el campo rellenado ya existía en la base de datos
-                $sql = <<<EOD
-                        SELECT CodDepartamento from Departamento where CodDepartamento="{$_REQUEST['codDepartamento']}";
+            //Se crea una variable que contiene la consulta sql
+            $sql = <<<EOD
+                    SELECT CodDepartamento from Departamento where 
+                    CodDepartamento="{$_REQUEST['codDepartamento']}";
 EOD;
 
-                //Se utiliza el método query, que devuele un objeto de la clase PDOStatement
-                $resultado = $miDB->query($sql);*/
-                
-                //Se crea una variable que contiene la consulta sql
-                $sql = <<<EOD
-                        SELECT CodDepartamento from Departamento where 
-                        CodDepartamento=":CodDepartamento";
-EOD;
+            //Preparamos la consulta
+            $consulta = $miDB->query($sql);
 
-                //Preparamos la consulta
-                $consulta = $miDB->prepare($sql);
-                
-                //Creación de las variables con el código de departamento
-                $CodDepartamento = $_REQUEST['codDepartamento'];
-               
-                //Llamada a bindParam
-                $consulta->bindParam(":CodDepartamento", $CodDepartamento);
-                
-                //Se ejecuta la consulta
-                $consulta->execute();
-                
-                //Se comprueba el campo y en caso de existir, muestra un mensaje de error
-                if($consulta->rowCount()>0){
-                    $aErrores['codDepartamento'] = "El código introducido ya existe";
-                }
-
-            } catch (PDOException $pdoe) {
-                //Mostrar mensaje de error
-                echo "<p style='color:red'>ERROR: " . $pdoe . "</p>";
-            } finally {
-                //Cerrar la conexión
-                unset($miDB);
+            //Se comprueba el campo y en caso de existir, muestra un mensaje de error
+            if($consulta->rowCount()>0){
+                $aErrores['codDepartamento'] = "El código introducido ya existe";
             }
+            //Cerrar la conexión
+            unset($miDB);
+            
             
             //Comprobar si algún campo del array de errores ha sido rellenado
             foreach ($aErrores as $clave => $valor) {
@@ -127,13 +104,6 @@ EOD;
 
                 //Establecer PDO::ERRMODE_EXCEPTION como valor del atributo PDO::ATTR_ERRMODE
                 $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                /*//Creo una variable que almacena una consulta sql para insertar los valores en la tabla Departamento
-                $sql = <<<EOD
-                        INSERT INTO Departamento (CodDepartamento, DescDepartamento, Volumennegocio) VALUES ("{$aRespuestas['codDepartamento']}", "{$aRespuestas['descripcion']}", {$aRespuestas['volumenNegocio']})
-EOD;
-                //Se utiliza el método query, que devuele un objeto de la clase PDOStatement
-                $resultado = $miDB->query($sql);*/
                 
                 //Se crea una variable que almacena una consulta sql para insertar los valores en la tabla Departamento
                 $sql = <<<EOD
